@@ -6,4 +6,4 @@ print("Sorted list:", sorted_list)
 
 #The lambda function lambda x: str(x) takes an element x from the list
 #and converts it to a string using the str() function.
-#This ensures that all elements in the list are treated as strings during the sorting process.
+#This ensures that all elements in the list are treated as strings during the sorting process
