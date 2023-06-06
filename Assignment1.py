@@ -172,5 +172,58 @@ print("Even numbers:", even_numbers)
 print("Count:", len(even_numbers))
 # (iii) All prime numbers
 
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
 
-#ques7
+prime_numbers = [num for num in empty if is_prime(num)]
+print(prime_numbers)
+print("count:", len(prime_numbers))
+
+#ques7 
+D={1:"One",2:"Two",3:"Three",4:"Four", 5:"Five"}
+#open a file
+with open("dictionary_data.txt", "w") as file:
+    
+    for key, value in D.items():
+        file.write(f"{key}, {value}\n")
+
+#ques8
+L = ["One", "Two", "Three", "Four", "Five"]
+
+
+with open("list_lengths.txt", "w") as file:
+    
+    for element in L:
+        length = len(element)
+        file.write(f"{element}, {length}\n")
+        
+#ques12
+student_marks = {
+    "Manan": [80, 85, 90, 95, 92],
+    "Aditya": [75, 80, 85, 90, 88],
+    "Aman": [90, 92, 88, 85, 95],
+    "Alisha": [82, 86, 90, 88, 92],
+    "Ravi": [88, 90, 92, 87, 84]
+}
+
+average_marks = {student: sum(marks) / len(marks) for student, marks in student_marks.items()}
+
+max_student = max(average_marks, key=average_marks.get)
+max_average = average_marks[max_student]
+
+min_student = min(average_marks, key=average_marks.get)
+min_average = average_marks[min_student]
+
+
+print("Student with maximum average marks:")
+print("Name:", max_student)
+print("Average Marks:", max_average)
+print("Student with minimum average marks:")
+print("Name:", min_student)
+print("Average Marks:", min_average)
+
